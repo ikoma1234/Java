@@ -1,0 +1,2 @@
+Because in PrimitiveCall, k is passed by value.
+So k don't changed itself in main structure. 

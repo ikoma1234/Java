@@ -1,0 +1,57 @@
+class Rectangle{
+
+    public int height;
+    public int length;
+
+    Rectangle(int startHeight, int startLength){
+
+	this.height = startHeight;
+	this.length = startLength;	
+  
+    }
+
+    public void calPerimeter(){
+
+	int perimeter = 2*(height + length);
+
+	System.out.println("Perimeter is " + perimeter + ".");
+
+    }
+
+}
+
+class Box extends Rectangle{
+
+    int width;
+
+	
+    public void setWidth(int startWidth){
+      
+	this.width = startWidth;
+  
+    }
+
+    public void calPerimeter(){
+
+	int perimeter = 4*(length+height+width);
+        
+	System.out.println("Perimeter is " + perimeter + ".");
+
+    }
+
+}
+
+class IndependentClassesExtend{
+
+    public static void main(String[] strings) {
+
+	Rectangle r1 = new Rectangle(1,2);
+	Box b1 = new Rectangle(1,2);
+	b1.setWidth(3);
+
+	r1.calPerimeter();
+	b1.calPerimeter();
+
+    }
+    
+}

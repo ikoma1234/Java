@@ -1,0 +1,5 @@
+How many fields does the Rectangle have? :2
+How many fields does the Box have? :1
+How many methods does the Rectangle have? :2
+How many methods does the Box have? :2
+What are the advantages that the solution to Problem 2 has over the solution to Problem 1. :I can reduce the same code that should be wirrten in Box class when I don't use inherited. 

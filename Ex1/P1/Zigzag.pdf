@@ -1,0 +1,14 @@
+Q1, "/" is the number of divide. "%" is the remainder.
+
+Q2, Display the program step by step.
+
+Q3, Continuely display the program.
+
+Q4, Stop the program.
+
+Q5, No
+
+Q6, Hundreds = number/100 = 1 (beecause hunsrets is int)
+    tens = (number/10)%10 = 12%10 = 2
+    ones = number%10 = 3
+    zigzag = 3*100 + 2*10 + 1 = 321

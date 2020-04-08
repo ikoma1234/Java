@@ -1,0 +1,22 @@
+
+
+class PrePostDemo {
+   public static void main(String[] args){
+     int i = 3;
+     i++;
+     System.out.println(i); // "4"
+     ++i;
+     System.out.println(i); // "5"
+     System.out.println(++i); // "6"
+     System.out.println(i++); // "6"
+     System.out.println(i); // "7"
+   }
+
+}
+
+First print, i++ means i=i+1 so i became 3 to 4.
+Second print, ++i means still i=i+1 so i became 4 to 5.
+third print, println(++i) means i=i+1 then print(i) so i became 5 to 6 and 6 is out.           
+fourth print, println(i++) means print(i) then i=i+1 so 6 is out then i became 6 to 7.
+
+this is why 6 printed twice.

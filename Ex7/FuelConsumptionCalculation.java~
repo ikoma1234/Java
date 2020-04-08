@@ -1,0 +1,128 @@
+/*class FuelConsumptionCalculation {
+    
+   private double fuelConsumptionOldRegulation = 0;
+   private double fuelConsumptionNewRegulation = 0;
+   private SimpleCar[] cars;
+
+   FuelConsumptionCalculation() {
+      // your code is here 
+   }
+   FuelConsumptionCalculation(SimpleCar[] cars) {
+      // your code is here 
+   }
+   private void calculateFuelConsumption() {
+
+       System.out.println("Old regulation is "+ getFuelConsumptionOldRegulations() +". New regulation is "+getFuelConsumptionNewRegulations()+".");
+	   
+      // your code to calculate values of
+       // fuelConsumptionOldRegulation and
+       // fuelConsumptionNewRegulation is here 
+   }
+    float getFuelConsumptionOldRegulations() {
+
+	return traveledkm/kperl+(workend-workbegan)/hperl;
+	// your code is here 
+    }
+    float getFuelConsumptionNewRegulations() {
+
+	return traveledkm/kperl+passengerhours/hperl;
+	// your code is here
+    }
+    } */
+
+
+class SimpleCar{
+
+    public double workbegan,workend,traveledkm,passengerhours;
+
+    double kperl;
+    double hperl;
+
+    public void Setname(String name){
+	if(name=="Honda"){
+	    kperl=14;
+	    hperl=15.5;
+	}
+	else if(name=="Toyota"){
+	    kperl=15.5;
+	    hperl=9.5;
+	}
+	else if(name=="Nissan"){
+	    kperl=13;
+	    hperl=-1;
+	}
+	else if(name=="Van"){
+	    kperl=10.5;
+	    hperl=6;
+	}
+    }
+	
+    public void Setworkbegan(double startworkbegan){
+	workbegan=startworkbegan;
+    }
+    public void Setworkend(double startworkend){
+	workend=startworkend;	
+    }
+    public void Settraveledkm(double starttraveledkm){
+	traveledkm=starttraveledkm;
+    }
+    public void Setpassengerhours(double startpassengerhours){
+	passengerhours=startpassengerhours;
+    }
+	
+
+    double calculateFuelConsumption(){
+
+	return traveledkm/kperl;
+	
+    }
+
+    void print(){
+
+	System.out.println("Fuel consumption is "+ calculateFuelConsumption() +".");
+
+    }
+          
+}
+
+class AdvancedCar extends SimpleCar{
+
+    double calculateFuelConsumption(){
+
+	return traveledkm/kperl+passengerhours/hperl;
+
+    }
+
+}
+
+class DeluxeCar extends AdvancedCar{
+
+    double calculateFuelConsumption(){
+
+	return traveledkm/kperl+(workend-workbegan)/hperl;
+	
+    }
+
+}
+
+class CarDemo{
+
+    public static void main(String[] args){
+
+	AdvancedCar test = new AdvancedCar();
+
+	test.Setname("Toyota");
+	test.Setworkbegan(1.0);
+	test.Setworkend(4.0);
+	test.Settraveledkm(3.0);
+	test.Setpassengerhours(2.0);
+
+	test.print();
+
+	SimpleCar test2=test;
+
+	test2.print();
+
+    }
+
+}

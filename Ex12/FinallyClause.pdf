@@ -1,0 +1,6 @@
+(1) In this program, when count becames 2, exception is engaged.
+Then 'catch' function is provoked, and 'finally' function is provoked.
+
+(2)Because count has't became 3, yet everytime 'finally' function will provoked following to 'catch'..
+
+(3)Because count becames 3 and break; line is provoked.

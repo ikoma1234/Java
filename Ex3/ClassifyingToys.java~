@@ -1,0 +1,36 @@
+public class ClassifyingToys {
+    public static void main(String [] args){
+
+	double x;
+	double y;
+	double z;
+	double longest;
+
+	x=3;
+	y=2;
+	z=4;
+	
+	longest = z;
+	if (longest < x) {
+	    z = longest;
+	    longest = x;
+	    x = z;
+	}
+	if (longest < y) {
+	    z = longest;
+	    longest = y;
+	    y = z;
+	}
+
+	if( x * x + y * y == longest * longest ) {
+	    system.out.println("right-angled \n");
+	}
+	else if( x * x + y * y > longest * longest) {
+	    system.out.println("acute-angled \n");
+	}
+	else system.out.println("obtuse-angled \n");
+
+        
+    }
+}
+

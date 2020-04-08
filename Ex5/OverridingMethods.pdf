@@ -1,0 +1,3 @@
+Which method overrides a method in the superclass? :methodTwo
+Which method hides a method in the superclass? :methodThree, methodFour
+What do the other methods do? :methodOne, change method in only ClassB.

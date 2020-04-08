@@ -1,0 +1,1 @@
+Becouse at first class, in Animal, int counter is take position to Cat class and Dog class. So in Counter class, only count in Animal class is increment.

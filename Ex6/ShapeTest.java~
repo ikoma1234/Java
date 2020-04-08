@@ -1,0 +1,156 @@
+import java.util.Scanner;
+import java.lang.Math;
+
+class Shape {
+    private String name;
+
+    double perimeter, area;
+    
+    public Shape(String name) {
+	this.name = name;
+    }
+    public Shape() {
+	name = "no name";
+    }
+    public String getName() {
+	return name;
+    }
+    public String toString() {
+	return getClass().getName() + " " + name;
+    }
+    public get(){
+	System.out.println("Perimeter is: " + perimeter + ". Area is: " + area + ".");
+    }
+    
+}
+
+class Circle extends Shape{
+
+    double radius;
+
+    void getRadius(double startRadius){
+	radius = getRadius;
+    }
+
+    void getPerimeter(){
+	perimeter = 2*radius*Math.PI;
+    }
+
+    void getArea(){
+	area = radius*radius*Math.PI;
+    }
+	
+
+}
+
+class Rectangle extends Shape{
+
+    double ab,bc,cd,da;
+
+    void gerAdjacentSides(double startAB, doule startBC){
+
+	ab = startAB;
+	bc = startBC;
+	
+        cd=ab;
+	da=bc;
+	
+    }
+
+    void getPerimeter(){
+	perimeter = 2*(ab+bc);
+    }
+
+    void getArea(){
+	area = ab*bc;
+    }
+
+}
+
+class Square extends Rectangle{
+
+    void getSides(double startSide){
+
+	ab = startSide;
+	
+	bc=cd=da=ab;
+	
+    }
+
+}
+
+class Rhombus extends Square{
+
+    double diagonal;
+
+    void getDiagonal(double startDiagonal){
+
+	diagonal = startDiagonal;
+
+    }
+
+    void getArea(){
+
+	double s;
+
+	 s = (a + b + c) / 2.0;
+	 area = Math.sqrt(s*(s-a)*(s-b)*(s-c));
+
+    }
+    
+}
+
+class Parallelogram extends Rectangle{
+
+    double diagonal;
+  
+    void getDiagonal(double startDiagonal){
+
+	diagonal = startDiagonal;
+	
+    }
+
+    void getArea(){
+
+	double s;
+
+	 s = (a + b + c) / 2.0;
+	 area = Math.sqrt(s*(s-a)*(s-b)*(s-c));
+
+    }
+
+}
+
+void TestFigure()
+    
+    public static void main(String[] strings) {
+
+    Circle c1 = new Circle();
+    c1.getRadius(5);
+
+    Rectangle re1 = new Rectangle();
+    re1.gerAdjacentSides(3,4);
+
+    Square s1 = new Sqare();
+    s1.getSides(5);
+
+    Rhombus rh1 = new Rhombus();
+    r1.gesSides(5);
+    //0<Diagonal<2*side
+    r1.getDiagonal(2,3);
+
+    Parallelogram p1 = new Parallelogram();
+    p1.getAdjacentSides(2,3);
+    //long-short<Diagonal<long+short
+    p1.getDiagonal(4);
+
+
+    c1.get();
+    re1.get();
+    s1.get();
+    r1.get();
+    p1.get();
+	
+}
+	
+    

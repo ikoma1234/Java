@@ -1,0 +1,195 @@
+import java.util.Scanner;
+import java.lang.Math;
+
+class Shape {
+    private String name;
+
+    double perimeter, area;
+    
+    public Shape(String name) {
+	this.name = name;
+    }
+    public Shape() {
+	name = "no name";
+    }
+    public String getName() {
+	return name;
+    }
+    public String toString() {
+	return getClass().getName() + " " + name;
+    }
+    void get(){
+	System.out.println("Perimeter is: " + perimeter + ". Area is: " + area + ".");
+    }
+    
+}
+
+class Circle extends Shape{
+
+    double radius;
+
+    void getRadius(double startRadius){
+	radius = startRadius;
+    }
+
+    void get(){
+	perimeter = 2*radius*Math.PI;
+	area = radius*radius*Math.PI;
+
+	System.out.println("Circle, Radius:" + radius + ".");
+	System.out.println("Perimeter is: " + perimeter + ". Area is: " + area + ".");
+    }
+    
+}
+
+class Rectangle extends Shape{
+
+    double ab,bc,cd,da;
+
+    void gerAdjacentSides(double startAB, double startBC){
+
+	ab = startAB;
+	bc = startBC;
+	
+        cd=ab;
+	da=bc;
+	
+    }
+
+    void get(){
+	perimeter = 2*(ab+bc);
+	area = ab*bc;
+	
+	System.out.println("Rectangle. Sides:"+ ab + ", " + bc + ".");
+	System.out.println("Perimeter is: " + perimeter + ". Area is: " + area + ".");
+    }
+
+}
+
+class Square extends Shape{
+
+    double ab,bc,cd,da;
+
+    void gerAdjacentSides(double startAB, double startBC){
+
+	ab = startAB;
+	bc = startBC;
+	
+        cd=ab;
+	da=bc;
+	
+    }
+
+    void getSides(double startSide){
+
+	ab = startSide;
+	
+	bc=cd=da=ab;
+	
+    }
+
+}
+
+class Rhombus extends Shape{
+
+    double diagonal;
+
+    void gerAdjacentSides(double startAB, double startBC){
+
+	ab = startAB;
+	bc = startBC;
+	
+        cd=ab;
+	da=bc;
+	
+    }
+
+    void getDiagonal(double startDiagonal){
+
+	diagonal = startDiagonal;
+
+    }
+
+    void get(){
+
+	perimeter = 2*(ab+bc);
+
+	double s;
+
+	 s = (diagonal + ab + bc) / 2.0;
+	 area = 2*Math.sqrt(s*(s-diagonal)*(s-ab)*(s-bc));
+	 
+	 System.out.println("Rhombus, Sides:" + ab + ", " + bc + ", Diagonal:" + diagonal + ".");
+	 System.out.println("Perimeter is: " + perimeter + ". Area is: " + area + ".");
+    }
+    
+}
+
+class Parallelogram extends Shape{
+
+    double diagonal;
+
+    void gerAdjacentSides(double startAB, double startBC){
+
+	ab = startAB;
+	bc = startBC;
+	
+        cd=ab;
+	da=bc;
+	
+    }
+  
+    void getDiagonal(double startDiagonal){
+
+	diagonal = startDiagonal;
+	
+    }
+
+    void get(){
+
+	perimeter = 2*(ab+bc);
+
+	double s;
+
+	 s = (diagonal + ab + bc) / 2.0;
+	 area = 2*Math.sqrt(s*(s-diagonal)*(s-ab)*(s-bc));
+
+	 System.out.println("Parallelogram, Sides:" + ab + ", " + bc + ", Diagonal:" + diagonal);
+	 System.out.println("Perimeter is: " + perimeter + ". Area is: " + area + ".");
+    }
+
+}
+
+class TestFigure{
+    
+    public static void main(String[] strings) {
+
+	Circle c1 = new Circle();
+	c1.getRadius(5);
+
+	Rectangle re1 = new Rectangle();
+	re1.gerAdjacentSides(3,4);
+
+	Square s1 = new Square();
+	s1.getSides(5);
+
+	Rhombus rh1 = new Rhombus();
+	rh1.getSides(5);
+	//0<Diagonal<2*side
+	rh1.getDiagonal(3);
+
+	Parallelogram p1 = new Parallelogram();
+	p1.gerAdjacentSides(2,3);
+	//long-short<Diagonal<long+short
+	p1.getDiagonal(4);
+
+
+	c1.get();
+	re1.get();
+	s1.get();
+	rh1.get();
+	p1.get();
+
+	
+    }
+}
